@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: vlad
+  password: secret
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: omniauth_google_db
+
+test:
+  <<: *default
+  database: omniauth_google_db_test
